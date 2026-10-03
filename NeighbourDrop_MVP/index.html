@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeighbourDrop | Local Delivery Membership</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <div class="brand-mark">ND</div>
+      <div>
+        <strong>NeighbourDrop</strong>
+        <span>Local delivery membership</span>
+      </div>
+    </div>
+    <button class="nav-btn" onclick="scrollToSection('stores')">Explore Stores</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">₹149 / MONTH • FREE DELIVERY WITHIN 3 KM</span>
+        <h1>Your neighbourhood stores.<br><span>One simple membership.</span></h1>
+        <p>Order from participating local stores without paying a separate delivery charge on every order.</p>
+        <div class="hero-actions">
+          <button class="primary" onclick="openMembership()">Join for ₹149</button>
+          <button class="secondary" onclick="scrollToSection('stores')">Browse stores</button>
+        </div>
+        <div class="trust-row">
+          <div><b>600</b><small>pilot members</small></div>
+          <div><b>3 km</b><small>service radius</small></div>
+          <div><b>5×</b><small>expected monthly orders</small></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="mini-top">
+          <span>Membership</span><span class="active-dot">● Active</span>
+        </div>
+        <div class="price">₹149 <small>/ month</small></div>
+        <div class="benefit"><span>✓</span> Free delivery from participating stores</div>
+        <div class="benefit"><span>✓</span> Stores within 3 km</div>
+        <div class="benefit"><span>✓</span> One membership, multiple local stores</div>
+        <button class="primary full" onclick="openMembership()">Activate membership</button>
+      </div>
+    </section>
+
+    <section class="section" id="stores">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PARTICIPATING STORES</span>
+          <h2>Shop local, delivered simply.</h2>
+        </div>
+        <span class="location-pill">📍 Within 3 km</span>
+      </div>
+      <div class="store-grid">
+        <article class="store-card">
+          <div class="store-icon">🥦</div>
+          <div><h3>FreshMart</h3><p>Groceries & daily essentials</p></div>
+          <span class="distance">1.2 km</span>
+          <button onclick="selectStore('FreshMart')">Shop Now</button>
+        </article>
+        <article class="store-card">
+          <div class="store-icon">💊</div>
+          <div><h3>CarePlus Pharmacy</h3><p>Health & personal care</p></div>
+          <span class="distance">0.8 km</span>
+          <button onclick="selectStore('CarePlus Pharmacy')">Shop Now</button>
+        </article>
+        <article class="store-card">
+          <div class="store-icon">🍞</div>
+          <div><h3>DailyBake</h3><p>Bakery & fresh snacks</p></div>
+          <span class="distance">1.6 km</span>
+          <button onclick="selectStore('DailyBake')">Shop Now</button>
+        </article>
+        <article class="store-card">
+          <div class="store-icon">🥛</div>
+          <div><h3>Neighbour Grocery</h3><p>Milk, staples & household items</p></div>
+          <span class="distance">2.1 km</span>
+          <button onclick="selectStore('Neighbour Grocery')">Shop Now</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section light" id="how">
+      <div class="section-heading centered">
+        <div>
+          <span class="eyebrow">HOW IT WORKS</span>
+          <h2>Four simple steps.</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step"><span>01</span><h3>Join</h3><p>Activate the ₹149 monthly membership.</p></div>
+        <div class="step"><span>02</span><h3>Choose</h3><p>Select any participating store within 3 km.</p></div>
+        <div class="step"><span>03</span><h3>Order</h3><p>Place your order and confirm the address.</p></div>
+        <div class="step"><span>04</span><h3>Receive</h3><p>Your local delivery partner brings it to you.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="demo-panel">
+        <div>
+          <span class="eyebrow">MVP DEMO</span>
+          <h2>One membership. Multiple local stores.</h2>
+          <p>This prototype demonstrates the core customer flow planned for the 90-day pilot.</p>
+        </div>
+        <div class="demo-flow">
+          <span>Membership</span><b>→</b><span>Store</span><b>→</b><span>Order</span><b>→</b><span>Delivery</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section metrics">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PILOT ECONOMICS</span>
+          <h2>The business at 600 members.</h2>
+        </div>
+      </div>
+      <div class="metric-grid">
+        <div class="metric"><strong>₹89,400</strong><span>monthly membership revenue</span></div>
+        <div class="metric"><strong>3,000</strong><span>expected monthly deliveries</span></div>
+        <div class="metric"><strong>₹29.80</strong><span>membership revenue per expected delivery</span></div>
+        <div class="metric"><strong>₹10.73L</strong><span>annualized membership revenue</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>NeighbourDrop</strong>
+    <span>Case Study 97 • Go-to-Market & Customer Operations</span>
+  </footer>
+
+  <div class="modal" id="membershipModal">
+    <div class="modal-box">
+      <button class="close" onclick="closeModal()">×</button>
+      <span class="eyebrow">JOIN NEIGHBOURDROP</span>
+      <h2>Activate your ₹149 membership</h2>
+      <p>Enter your details to simulate the membership signup for the MVP demo.</p>
+      <input id="customerName" placeholder="Your name">
+      <input id="customerAddress" placeholder="Residential area / address">
+      <button class="primary full" onclick="activateMembership()">Activate Membership</button>
+      <p class="success" id="successMessage"></p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
